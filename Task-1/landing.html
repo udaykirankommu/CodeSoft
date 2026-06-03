@@ -1,67 +1,231 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Website</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .hero-section {
+            background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            text-align: center;
+            color: white;
+            padding-top: 250px;
+        }
+
+        .hero-section h1 {
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        .hero-section p {
+            font-size: 22px;
+            margin-top: 15px;
+        }
+
+        .page-bg {
+            background-color: #f4f4f4;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #0d6efd;
+        }
+
+        .travel-card {
+            background: white;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .travel-card img {
+            width: 150px;
+            height: 120px;
+            border-radius: 10px;
+            margin-right: 15px;
+        }
+
+        .detail-img {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .btn-space {
+            margin-top: 20px;
+        }
+    </style>
 </head>
+
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#destinations">Destinations</a></li>
-                <li><a href="#activities">Activities</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div id="home" class="hero">
-        <h1 style="color:#fff;">Explore the World</h1>
-        <p style="color:#fff;">Discover new places and embark on amazing adventures with us.</p>
-        <button onclick="location.href='#destinations'" style="color:#fff;">Get Started</button>
+
+<!-- HOME PAGE -->
+
+<div id="sectionhome">
+    <div class="hero-section">
+        <h1>Explore The World</h1>
+        <p>Discover Amazing Destinations & Adventures</p>
+
+        <button class="btn btn-primary mt-3"
+            onclick="display('sectiondestinations')">
+            Get Started
+        </button>
     </div>
-    <section id="destinations" class="destinations">
-        <h2>Popular Destinations</h2>
-        <div class="destination">
-            <img src="img/newyork.jpg" alt="Destination 1">
-            <h3>NEW YORK</h3>
-            <p>Experience the beauty and culture of this amazing place.</p>
+</div>
+
+<!-- DESTINATIONS PAGE -->
+
+<div id="sectiondestinations" style="display:none;">
+    <div class="page-bg">
+
+        <h1 class="heading">Popular Destinations</h1>
+
+        <div class="travel-card d-flex flex-row">
+            <img src="https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2">
+            <div>
+                <h4>New York</h4>
+                <p>The city that never sleeps.</p>
+
+                <button class="btn btn-info"
+                    onclick="display('sectionnewyork')">
+                    View Details
+                </button>
+            </div>
         </div>
-        <div class="destination">
-            <img src="img/paris.jpg" alt="Destination 2">
-            <h3>PARIS</h3>
-            <p>Enjoy the stunning landscapes and vibrant cities.</p>
+
+        <div class="travel-card d-flex flex-row">
+            <img src="https://images.unsplash.com/photo-1431274172761-fca41d930114">
+            <div>
+                <h4>Paris</h4>
+                <p>The city of love and lights.</p>
+
+                <button class="btn btn-info"
+                    onclick="display('sectionparis')">
+                    View Details
+                </button>
+            </div>
         </div>
-        <div class="destination">
-            <img src="img/tokoyo.jpg" alt="Destination 3">
-            <h3>TOKOYO</h3>
-            <p>Explore the rich history and delicious cuisine.</p>
+
+        <div class="travel-card d-flex flex-row">
+            <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf">
+            <div>
+                <h4>Tokyo</h4>
+                <p>Modern city with rich tradition.</p>
+
+                <button class="btn btn-info"
+                    onclick="display('sectiontokyo')">
+                    View Details
+                </button>
+            </div>
         </div>
-    </section>
-    <section id="activities" class="activities">
-        <h2>Top Activities</h2>
-        <div class="activity">
-            <img src="img/hiking.jpg" alt="Activity 1">
-            <h3>HIKING</h3>
-            <p>Adventure awaits with this thrilling experience.</p>
-        </div>
-        <div class="activity">
-            <img src="img/foodtour.jpg" alt="Activity 2">
-            <h3>FOOD TOUR</h3>
-            <p>Relax and unwind with this calming activity.</p>
-        </div>
-        <div class="activity">
-            <img src="img/scubadiving.jpg" alt="Activity 3">
-            <h3>SCUBA DIVING</h3>
-            <p>Learn something new with this fascinating workshop.</p>
-        </div>
-    </section>
-    <footer id="contact">
-        <p>Contact us at: <a href="mailto:info@travelwebsite.com" style="color: #fff;">info@travelwebsite.com</a></p>
-        <p>Phone: +91 994 951 2392</p>
-        <p>Phone: +91 814 213 8739</p>
-    </footer>
+
+        <button class="btn btn-warning"
+            onclick="display('sectionhome')">
+            Back
+        </button>
+
+    </div>
+</div>
+
+<!-- NEW YORK -->
+
+<div id="sectionnewyork" style="display:none;">
+    <div class="page-bg">
+
+        <h1 class="heading">New York</h1>
+
+        <img
+            src="https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2"
+            class="detail-img">
+
+        <p>
+            New York City is one of the most famous cities in the world,
+            known for Times Square, Central Park, and the Statue of Liberty.
+        </p>
+
+        <button class="btn btn-warning btn-space"
+            onclick="display('sectiondestinations')">
+            Back
+        </button>
+
+    </div>
+</div>
+
+<!-- PARIS -->
+
+<div id="sectionparis" style="display:none;">
+    <div class="page-bg">
+
+        <h1 class="heading">Paris</h1>
+
+        <img
+            src="https://images.unsplash.com/photo-1431274172761-fca41d930114"
+            class="detail-img">
+
+        <p>
+            Paris is famous for the Eiffel Tower, art museums,
+            and beautiful architecture.
+        </p>
+
+        <button class="btn btn-warning btn-space"
+            onclick="display('sectiondestinations')">
+            Back
+        </button>
+
+    </div>
+</div>
+
+<!-- TOKYO -->
+
+<div id="sectiontokyo" style="display:none;">
+    <div class="page-bg">
+
+        <h1 class="heading">Tokyo</h1>
+
+        <img
+            src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf"
+            class="detail-img">
+
+        <p>
+            Tokyo combines advanced technology with traditional culture,
+            making it one of the world's most exciting cities.
+        </p>
+
+        <button class="btn btn-warning btn-space"
+            onclick="display('sectiondestinations')">
+            Back
+        </button>
+
+    </div>
+</div>
+
+<script>
+function display(sectionId) {
+
+    const sections = document.querySelectorAll("body > div");
+
+    sections.forEach(section => {
+        section.style.display = "none";
+    });
+
+    document.getElementById(sectionId).style.display = "block";
+}
+</script>
+
 </body>
 </html>
